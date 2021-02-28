@@ -15,6 +15,7 @@ public class CustomFactory implements ViewModelProvider.Factory {
         this.repo = repo;
         movieViewModel.setMovieRepoInterface(repo);
         movieViewModel.getMovies();
+        movieViewModel.getSearchedMovies();
     }
 
     @NonNull

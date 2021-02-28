@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ private ClickInterFace clickInterFace;
         public ConstraintLayout constraintLayout;
         public View parent;
         private ImageButton delete;
+        private ConstraintLayout background;
 
 
 
@@ -54,6 +56,7 @@ private ClickInterFace clickInterFace;
             imageView = v.findViewById(R.id.movieImage);
             nameTextView = v.findViewById(R.id.movieTitle);
             delete = v.findViewById(R.id.deleteBtn);
+            background = v.findViewById(R.id.background);
 
         }
     }
@@ -67,6 +70,8 @@ private ClickInterFace clickInterFace;
         Log.i(TAG,"----OnCreateViewHolder-----");
         return vh;
     }
+
+
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -86,6 +91,14 @@ private ClickInterFace clickInterFace;
             }
         });
         Log.i(TAG,"*****OnBindViewHolder*****");
+
+        /*holder.background.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputMethodManager input = (InputMethodManager) topContext.getSystemService(topContext.INPUT_METHOD_SERVICE);
+                input.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+            }
+        });*/
     }
 
     @Override

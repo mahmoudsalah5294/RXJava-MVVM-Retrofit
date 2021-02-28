@@ -60,6 +60,11 @@ public class MovieRepo implements RepoInterface {
         return retrofitInterface.getMovies() ;
     }
 
+    public Observable<ArrayList<Movie>> getSearchedMovies(){
+
+        return retrofitInterface.getMovies() ;
+    }
+
     public void deleteMovie(Movie movie){
 
     }
